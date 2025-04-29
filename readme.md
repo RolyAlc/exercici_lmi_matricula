@@ -1,6 +1,6 @@
-# Exercici. Matricula a l'IES.
+# Exercici. Matricula a l'IES
 
-Anem a preparar el procediment per realitzar la matrícula on-line dels cicles formatius de DAM/DAW a l'institut. 
+Anem a preparar el procediment per realitzar la matrícula on-line dels cicles formatius de DAM/DAW a l'institut.
 
 Per a això, generarem una aplicació amb ExpressJS que contindrà un forulari HTML amb el qual recollirem les dades de matrícula. Aquestes dades s'enviaran al servidor, i aquest, a través de XSLT-FO generarà un document pdf que ens podrem descarregar des del navegador.
 
@@ -31,7 +31,7 @@ El funcionament seguirà els següents punts:
 
 ## Frontend (index.html)
 
-Conté el formulari amb la matrícula. En ell es demanaran: 
+Conté el formulari amb la matrícula. En ell es demanaran:
 
 * **nom** de l'alumne (obligatori)
 * **cognoms**, (obligatori)
@@ -39,7 +39,7 @@ Conté el formulari amb la matrícula. En ell es demanaran:
 * **email**, (oblligatori, i ben formatat)
 * **adreça**,
 * **telèfon**,
-* **cicle** (desplegable amb les opcions mínimes DAM/DAW), 
+* **cicle** (desplegable amb les opcions mínimes DAM/DAW),
 * **curs** (radiobuttons per triar entre 1r/2n)
 * **llista de mòduls** del curs en el què es va a matricular, (serà una llista de checkboxes, un per mòdul).
 
@@ -67,4 +67,4 @@ Per tal de provar les ordres xsltproc i fop, podeu fer-ho directament des de la 
 
 ## Exemple de formulari complet
 
-![](img/formulari.png)
+![img](img/formulari.png)
