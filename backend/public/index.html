@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -49,16 +47,16 @@
                 * Curs: Amb dos inputs de tipus Radio per triar 1r o 2n.
             -->
 
-            <label for="cicle_Formatiu">Cicle formatiu:</label>
-            <select id="cicle_Formatiu">
-                <option value="opcio1DAM">DAM</option>
-                <option value="opcio2DAW">DAW</option>
+            <label for="cicle_Formatiu">Cicle formatiu:</label>            
+            <select id="cicle" name="cicle">  <!-- id cicle para el index.js -->
+                <option value="DAM">DAM</option>
+                <option value="DAW">DAW</option>
             </select>
             
-            <!-- Cursos: Elegible uno solo -->
+            <!-- Cursos: Elegible uno solo -->            
             <label for="curs">Curs:</label>            
-            <input type="radio" id="primer" name="curs" value="1r"> Primer <br>
-            <input type="radio" id="segon" name="curs" value="2n"> Segundo
+            <input type="radio" id="primer" name="curs" value="1"> Primer <br> <!-- value tal cual como el json del index.js const moduls -->
+            <input type="radio" id="segon" name="curs" value="2"> Segon
 
         </fieldset>
 
@@ -70,6 +68,6 @@
         <button type="submit">Enviar matrícula</button>
     </form>
 
-    <script src="js/index.js" type="module"></script>
+    <script src="js/index.js" type="module" defer></script>
 </body>
 </html>
