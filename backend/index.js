@@ -1,9 +1,3 @@
-/*
-xml
-> Contruimos el XML dinámicamente usando template strings
-
-*/
-
 import express from 'express';
 import path from 'path';
 import fs from 'fs';
@@ -72,7 +66,7 @@ function generarXML(dades) {
         modulsXML += `<modul>${dades.moduls[i]}</modul>\n`
     }
     // Contruimos el XML dinámicamente usando template strings
-    return `
+    const xml = `
 <?xml version="1.0" encoding="UTF-8"?>
 <matricula>
   <alumne>
@@ -89,6 +83,9 @@ function generarXML(dades) {
   </moduls>
 </matricula>
     `;
+
+    console.log("XML generado:", xml);
+    return xml;
 }
 
 // Funció auxiliar per aplicar l'XSLT
@@ -97,15 +94,23 @@ function transformarXSLT(xmlPath, foPath) {
         // TODO >>
         /*
         Crea l'ordre xsltproc per convertir l'xml definit en xmlPath en un XML en format XSL-FO en foPath. 
-
         La plantilla la guardareu en ./xslt/matricula.xsl
         */
-        const cmd = ``;
+        
+        // Definimos la ruta donde se guarda la plantilla XSL
+        const xslPath = path.join(__dirname, 'xslt', 'matricula.xsl');
+
+        // Comando para ejecutar el xsltproc        
+        const cmd = `xsltproc "${xslPath}" "${xmlPath}" > "${foPath}"`;
+        // const cmd = `xsltproc -o "${foPath}" "${xslPath}" "${xmlPath}"`; // v2
 
         exec(cmd, (error, stdout, stderr) => {
             if (error) {
+                console.error("Error detallado:", stderr);
                 reject(`Error aplicant XSLT: ${error}`);
             } else {
+                // DEBUG
+                console.log("XSLT completada:", stdout);
                 resolve();
             }
         });
@@ -125,8 +130,12 @@ function generarPDF(foPath, pdfPath) {
 
         exec(cmd, (error, stdout, stderr) => {
             if (error) {
+                // DEBUG
+                console.error("Error detallado:", stderr);
                 reject(`Error generant PDF: ${error}`);
             } else {
+                // DEBUG
+                console.log("PDF completada:", stdout);
                 resolve();
             }
         });
