@@ -56,6 +56,10 @@ function actualitzarModuls() {
     // Amb l'opció seleccionada (checked), ens quedem amb el se value (i per tant, ja tenim el curs)
     const curs = [...cursRadios].find(radio => radio.checked)?.value;
 
+    // MODO DEPURAR
+    console.log("Cicle seleccionant:", cicle);
+    console.log("Curs seleccionant:", curs);
+
     // Si falta informació no fem res
     if (!cicle || !curs) return;
 
@@ -85,6 +89,8 @@ function actualitzarModuls() {
     if (moduls[cicle]) { // Comprobamos si existe el ciclo
         if (moduls[cicle][curs]) { // Comprobar si existe el curso dentro del ciclo
             modulsSeleccionats = moduls[cicle][curs]; // Asignamos los modulos
+            // DEBUG
+            console.log("Modulos seleccionados:", modulsSeleccionats);
         } else {
             modulsSeleccionats = []; // Si no hay curso, dejamos array/vector vacio
         }
@@ -102,6 +108,8 @@ function actualitzarModuls() {
                 
                 // Creamos un elemento <label> (HTML) para cada módulo obtenido al recorrer el for
                 const etiqueta = document.createElement('label');
+                // DEBUG
+                console.log("Modulos seleccionados:", modul);
                 /*
                 // Creamos un elemento <input> (HTML) para el checkbox
                 const checkbox = document.createElement('input');
@@ -115,8 +123,10 @@ function actualitzarModuls() {
                 ...
                 */
                 etiqueta.innerHTML = `
-                <input type="checkbox" name="moduls" value="${modul}"> ${modul}
-                `
+                    <input type="checkbox" name="moduls" value="${modul}"> ${modul}
+                `;
+                // Añadimos el label (eriqueta) al contendor llistaModulsDiv
+                llistaModulsDiv.appendChild(etiqueta);
             }
         } else {
             console.log("Datos no encontrado")
