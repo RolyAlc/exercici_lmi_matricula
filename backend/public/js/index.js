@@ -157,9 +157,13 @@ form.addEventListener('submit', async (e) => {
         Prepara un objece JSON amb la informació guardada al formulari
         */
     
-    // Preparamos el objeto JSON con los datos guardados del formulario para enviarlos al srv
-    // todo: guardar todo el formulario? del html? [alumno]
+    // Preparamos el objeto JSON con los datos guardados del formulario para enviarlos al srv    
     const jsonData = {
+        nom: formData.get("nom"), // Nombre del alumno
+        cognoms: formData.get("cognoms"), // Apellido del alumno
+        email: formData.get("email"), // Correo electrónico del alumno
+        adreça: formData.get("adreça"), // Dirección del alumno
+        telefon: formData.get("telefon"), // Teléfono del alumno
         cicle: formData.get("cicle"), // Obtendremos el valor del ciclo
         curs: formData.get("curs"), // Obtendremos el valor del curso
         moduls: formData.getAll("moduls") // Obtendremos todos los modulos seleccionados
@@ -210,7 +214,7 @@ form.addEventListener('submit', async (e) => {
         a.remove(); // Eliminamos la url del DOM para limpiar al page
         URL.revokeObjectURL(url); // Liberamos la memoria asociadao a la URL creada con el Blob
     }
-    catch {
+    catch (error) {
         console.log("Error al enviar el formulario:", error)
     }
 });
