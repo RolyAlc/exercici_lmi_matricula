@@ -1,3 +1,9 @@
+/*
+xml
+> Contruimos el XML dinámicamente usando template strings
+
+*/
+
 import express from 'express';
 import path from 'path';
 import fs from 'fs';
@@ -56,14 +62,31 @@ app.post('/enviar-matricula', async (req, res) => {
 
 // Funció auxiliar per a generar l'XML
 function generarXML(dades) {
+    // TODO >>
     /*
-    TO-DO:
-
     Amb les dades rebudes, generem un XML, amb el format corresponent (veieu exemple)
     */
+    // Realizamos un bucle para los moduelos de dades
+    let modulsXML = '';
+    for (let i = 0; i < dades.moduls.length; i++) {
+        modulsXML += `<modul>${dades.moduls[i]}</modul>\n`
+    }
+    // Contruimos el XML dinámicamente usando template strings
     return `
+<?xml version="1.0" encoding="UTF-8"?>
 <matricula>
-  ...
+  <alumne>
+    <nom>${dades.nom}</nom>
+    <cognoms>${dades.cognoms}</cognoms>
+    <email>${dades.email}</email>
+    <adreca>${dades.adreca}</adreca>
+    <telefon>${dades.telefon}</telefon>
+  </alumne>
+  <cicle>${dades.cicle}</cicle>
+  <curs>${dades.curs}</curs>
+  <moduls>
+    ${modulsXML}
+  </moduls>
 </matricula>
     `;
 }
@@ -71,14 +94,11 @@ function generarXML(dades) {
 // Funció auxiliar per aplicar l'XSLT
 function transformarXSLT(xmlPath, foPath) {
     return new Promise((resolve, reject) => {
+        // TODO >>
         /*
-        TO-DO:
-
-        Crea l'ordre xsltproc per convertir l'xml definit en xmlPath en un XML en format
-        XSL-FO en foPath. 
+        Crea l'ordre xsltproc per convertir l'xml definit en xmlPath en un XML en format XSL-FO en foPath. 
 
         La plantilla la guardareu en ./xslt/matricula.xsl
-
         */
         const cmd = ``;
 
@@ -95,11 +115,10 @@ function transformarXSLT(xmlPath, foPath) {
 // Funció auxiliar per a generar el PDF (cridant Apache FOP)
 function generarPDF(foPath, pdfPath) {
     return new Promise((resolve, reject) => {
-        /* TO-DO: 
-        
+        // TODO >>
+        /*
         Crea l'ordre que utilitzaràs amb fop per convertir l'XML-FO a PDF
         L'xml-fo es troba a foPath i el pdf el generaràs en pdfPath 
-
         */
         
         const cmd = `fop "${foPath}" "${pdfPath}"`;
