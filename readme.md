@@ -2,9 +2,9 @@
 
 Anem a preparar el procediment per realitzar la matrícula on-line dels cicles formatius de DAM/DAW a l'institut.
 
-Per a això, generarem una aplicació amb ``**ExpressJS**`` que contindrà un formulari HTML amb el qual recollirem les dades de matrícula.
+Per a això, generarem una aplicació amb **`ExpressJS`** que contindrà un formulari HTML amb el qual recollirem les dades de matrícula.
 
-Aquestes dades s'enviaran al servidor, i aquest, a través de ``**XSLT-FO**`` generarà un document pdf que ens podrem descarregar des del navegador.
+Aquestes dades s'enviaran al servidor, i aquest, a través de **`XSLT-FO`** generarà un document pdf que ens podrem descarregar des del navegador.
 
 L'estructura del projecte serà la següent:
 
