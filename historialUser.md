@@ -24,3 +24,6 @@ Se ha añadido modos debug
 array ok
 los elementos generados no se están mostrando en el DOM.
 se a añadido al contendor llistaModulsDiv todo el label que se genera dinamicamente
+
+SE HA CREADO MANUALMENTE LA CARPETA uploads para guardar los xml,xslt, xsl-fo
+Problema de erro de xsltproc >> Probar en entorno linux
