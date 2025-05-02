@@ -122,8 +122,8 @@ function actualitzarModuls() {
                 etiqueta.appendChild(checkbox);
                 ...
                 */
-                etiqueta.innerHTML = `
-                    <input type="checkbox" name="moduls" value="${modul}"> ${modul}
+                // Crear la estrucutra del html con innerHTML
+                etiqueta.innerHTML = `<input type="checkbox" name="moduls" value="${modul}"> ${modul}
                 `;
                 // Añadimos el label (eriqueta) al contendor llistaModulsDiv
                 llistaModulsDiv.appendChild(etiqueta);
