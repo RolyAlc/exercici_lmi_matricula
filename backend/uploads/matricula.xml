@@ -1,0 +1,19 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<matricula>
+  <alumne>
+    <nom>ggg</nom>
+    <cognoms>ggg</cognoms>
+    <email>ggg@ggg.com</email>
+    <adreca></adreca>
+    <telefon></telefon>
+  </alumne>
+  <cicle>DAM</cicle>
+  <curs>1</curs>
+  <moduls>
+      <modul>Programació</modul>
+      <modul>Bases de Dades</modul>
+      <modul>Sistemes Informàtics</modul>
+</moduls>
+</matricula>
+    
