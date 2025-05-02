@@ -36,6 +36,7 @@
                 </fo:table-cell>
                 <fo:table-cell border="solid 1px black" padding="5pt">
                   <fo:block>
+                    <!-- todo>> -->
                     <!-- Incorpora aci la ruta per accedir al nom de l'alumne -->
                   </fo:block>
                 </fo:table-cell>
@@ -46,6 +47,7 @@
                 </fo:table-cell>
                 <fo:table-cell border="solid 1px black" padding="5pt">
                   <fo:block>
+                    <!-- todo>> -->
                     <!-- Incorpora aci la ruta per accedir als cognoms de l'alumne -->
                   </fo:block>
                 </fo:table-cell>
@@ -56,6 +58,7 @@
                 </fo:table-cell>
                 <fo:table-cell border="solid 1px black" padding="5pt">
                   <fo:block>
+                      <!-- todo>> -->
                       <!-- Incorpora aci la ruta per accedir al correu de l'alumne -->
                     </fo:block>
                 </fo:table-cell>
@@ -66,6 +69,7 @@
                 </fo:table-cell>
                 <fo:table-cell border="solid 1px black" padding="5pt">
                   <fo:block>
+                      <!-- todo>> -->
                       <!-- Incorpora aci la ruta per accedir a l'adreça de l'alumne -->
                   </fo:block>
                 </fo:table-cell>
@@ -76,6 +80,7 @@
                 </fo:table-cell>
                 <fo:table-cell border="solid 1px black" padding="5pt">
                   <fo:block>
+                      <!-- todo>> -->
                       <!-- Incorpora aci la ruta per accedir al telèfon de l'alumne -->
                   </fo:block>
                 </fo:table-cell>
@@ -90,12 +95,14 @@
 
           <fo:block space-after="0.2cm">
             <fo:inline font-weight="bold">Cicle: </fo:inline>
+              <!-- todo>> -->
               <!-- Incorpora aci la ruta per accedir al valor del cicle -->
             <xsl:value-of select="matricula/cicle"/>
           </fo:block>
 
           <fo:block space-after="0.5cm">
             <fo:inline font-weight="bold">Curs: </fo:inline>
+              <!-- todo>> -->
               <!-- Incorpora aci la ruta per accedir al valor del curs -->
           </fo:block>
 
@@ -105,6 +112,7 @@
           </fo:block>
 
           <fo:list-block provisional-label-separation="0.5cm" provisional-distance-between-starts="1cm">
+            <!-- todo>> -->
             <!-- Modifica el select pe incorpora  la ruta per accedir al cadascun dels mòduls -->
             <xsl:for-each select="">
               <fo:list-item>
