@@ -162,7 +162,7 @@ form.addEventListener('submit', async (e) => {
         nom: formData.get("nom"), // Nombre del alumno
         cognoms: formData.get("cognoms"), // Apellido del alumno
         email: formData.get("email"), // Correo electrónico del alumno
-        adreça: formData.get("adreça"), // Dirección del alumno
+        adreca: formData.get("adreca"), // Dirección del alumno
         telefon: formData.get("telefon"), // Teléfono del alumno
         cicle: formData.get("cicle"), // Obtendremos el valor del ciclo
         curs: formData.get("curs"), // Obtendremos el valor del curso
