@@ -79,8 +79,7 @@ function generarXML(dades) {
   <cicle>${dades.cicle}</cicle>
   <curs>${dades.curs}</curs>
   <moduls>
-    ${modulsXML}
-  </moduls>
+${modulsXML}</moduls>
 </matricula>
     `;
 
