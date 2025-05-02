@@ -66,7 +66,8 @@ function generarXML(dades) {
         modulsXML += `<modul>${dades.moduls[i]}</modul>\n`
     }
     // Contruimos el XML dinámicamente usando template strings
-    const xml = `<matricula>
+    const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<matricula>
   <alumne>
     <nom>${dades.nom}</nom>
     <cognoms>${dades.cognoms}</cognoms>
