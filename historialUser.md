@@ -27,3 +27,12 @@ se a añadido al contendor llistaModulsDiv todo el label que se genera dinamicam
 
 SE HA CREADO MANUALMENTE LA CARPETA uploads para guardar los xml,xslt, xsl-fo
 Problema de erro de xsltproc >> Probar en entorno linux
+
+PRUEBA FINAL 1
+
+PTE
+NO SABES PORQUE HAY ESPACIOS ARRIBA Y ABAJO A LA HORA DE GENERAR UN XML
+PROBAR EN ENTORNO LINUX
+
+SE HA RELIZADO LA PRUEBA EN ENTORNO LINUX CON LOS NUEVOS CAMBIOS (COMMITs)
+PRUEBAS 1 >> OK
