@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <matricula>
   <alumne>
-    <nom>hoal1</nom>
-    <cognoms>hoal1</cognoms>
-    <email>hoal1@hoal1.com</email>
-    <adreca>hoal1</adreca>
-    <telefon>hoal1</telefon>
+    <nom>d</nom>
+    <cognoms>d</cognoms>
+    <email>d@gmail.com</email>
+    <adreca></adreca>
+    <telefon></telefon>
   </alumne>
   <cicle>DAM</cicle>
   <curs>1</curs>
   <moduls>
-<modul>Bases de Dades</modul>
-<modul>Entorns de Desenvolupament</modul>
+<modul>Programació</modul>
+<modul>Itinerari Personal per a l'Ocupabilitat I</modul>
 </moduls>
 </matricula>

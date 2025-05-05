@@ -63,14 +63,13 @@ function actualitzarModuls() {
     // Si falta informació no fem res
     if (!cicle || !curs) return;
 
-
     // Netegem els mòduls anteriors
     modulsFieldset.innerHTML = '<legend>Mòduls</legend>';
     var llistaModulsDiv=document.createElement('div');
     llistaModulsDiv.classList.add("llistaModuls");
     modulsFieldset.appendChild(llistaModulsDiv);
 
-    // TODO:
+    // TODO >>
         /*
         Recorre els diferents mòduls del cicle i curs seleccionat, i crea 
         el corresponent label i checkbox, amb l'estructura:
@@ -84,13 +83,15 @@ function actualitzarModuls() {
     Se ha usado if anidados para comprobar cada uno de los ciclos y curso del modulo. En caso de que falle,
     esta se dejará vacio
     */
+
     let modulsSeleccionats; // Creamos variable para almacenar los módulos del ciclo => array
 
+    // COMPROBACIÓN
     if (moduls[cicle]) { // Comprobamos si existe el ciclo
         if (moduls[cicle][curs]) { // Comprobar si existe el curso dentro del ciclo
             modulsSeleccionats = moduls[cicle][curs]; // Asignamos los modulos
-            // DEBUG
-            console.log("Modulos seleccionados:", modulsSeleccionats);
+            
+            console.log("Modulos seleccionados:", modulsSeleccionats);// DEBUG
         } else {
             modulsSeleccionats = []; // Si no hay curso, dejamos array/vector vacio
         }
@@ -98,35 +99,21 @@ function actualitzarModuls() {
         modulsSeleccionats = []; // Si no hay ciclo, dejamos array/vector vacio
     }
 
-    // Comprobamos si hay modulos para mostrar y si tiene información dentro con un lenght
+    // Comprobamos si hay modulos para mostrar y si tiene información dentro la variable que almacena la info de los modulos seleccionados
     if (modulsSeleccionats) {
         if (modulsSeleccionats.length > 0) {
             // Recorremos cada módulo del array/vector usando un bucle for ya que es finitio
-            for (let i = 0; i < modulsSeleccionats.length; i++) { // Adaptamos el for defect al nuestro
-                // Obtendremos el módulo actual cuando recorrar el for
+            for (let i = 0; i < modulsSeleccionats.length; i++) { // Adaptamos el for defect al nuestro                
                 const modul = modulsSeleccionats[i];
                 
-                // Creamos un elemento <label> (HTML) para cada módulo obtenido al recorrer el for
-                const etiqueta = document.createElement('label');
-                // DEBUG
-                console.log("Modulos seleccionados:", modul);
-                /*
-                // Creamos un elemento <input> (HTML) para el checkbox
-                const checkbox = document.createElement('input');
-                // Asignamos los tipos para el checkbox >> type="checkbox" name="moduls" value="Programació"
-                checkbox.type = 'checkbox'; // Indicaremos el tipo de cheakbox. /txt
-                checkbox.name = 'moduls'; // Asignamos el nombre del input. /txt
-                checkbox.value = modul; // Asignamos el valor del módulo x cada bucle del for
-
-                // Añadiremos el checkbox dentro del label. mirar sus respectivos const. <label><input>...
-                etiqueta.appendChild(checkbox);
-                ...
-                */
+                const etiqueta = document.createElement('label');// Creamos un elemento <label> (HTML) para cada módulo obtenido al recorrer el for
+                
+                console.log("Modulos seleccionados:", modul);// DEBUG
+                
                 // Crear la estrucutra del html con innerHTML
-                etiqueta.innerHTML = `<input type="checkbox" name="moduls" value="${modul}"> ${modul}
-                `;
-                // Añadimos el label (eriqueta) al contendor llistaModulsDiv
-                llistaModulsDiv.appendChild(etiqueta);
+                etiqueta.innerHTML = `<input type="checkbox" name="moduls" value="${modul}" checked> ${modul}`; // Añadido checked activo en las listas de módulos
+                
+                llistaModulsDiv.appendChild(etiqueta); // Añadimos el label (eriqueta) al contendor llistaModulsDiv
             }
         } else {
             console.log("Datos no encontrado")
@@ -169,7 +156,7 @@ form.addEventListener('submit', async (e) => {
         moduls: formData.getAll("moduls") // Obtendremos todos los modulos seleccionados
     }
     
-    // todo:
+    // todo >>
     // Preparem l'objecte amb les dades per enviar al servidor
     // I l'enviem, fent ús d'una petició POST
     // Recordeu convertir el JSON a un string per enviar-lo al servidor
