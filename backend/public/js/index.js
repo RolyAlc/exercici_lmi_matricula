@@ -171,7 +171,7 @@ form.addEventListener('submit', async (e) => {
         // Construimos la estructura POST para enviar a una URL especifica
         // La url la podemos encontrar en el fichero ../backed/index.js
         // LInea >> app.post('/enviar-matricula', async (req, res) => { ...
-        const response = await fetch('http://localhost:3000/enviar-matricula', {
+        const response = await fetch('/enviar-matricula', { //mejor sin el dominio delante
             method: 'POST', // Indicamos el tipo de petición
             headers: { // Indicar propiedades ...
                 'Content-Type': 'application/json' // Especifica que enviem JSON
