@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Definició de l'element "matricula" -->
+    <xs:element name="matricula">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- Un o més elements de "alumne" -->
+                <xs:element name="alumne" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <!-- Informació del alumne -->
+                            <xs:element name="nom" type="xs:string" />
+                            <xs:element name="cognoms" type="xs:string" />
+                            <xs:element name="email" type="xs:string" />
+                            <xs:element name="adreca" type="xs:string" />
+                            <xs:element name="telefon" type="xs:string" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <!-- Un o més elements de "cicle" -->
+                <xs:element name="cicle" maxOccurs="unbounded" type="xs:string" />
+                <!-- Un o més elements de "curs" -->
+                <xs:element name="curs" maxOccurs="unbounded" type="xs:string" />
+                <!-- Un o més elements de "moduls" -->
+                <xs:element name="moduls" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <!-- Informació del modul -->
+                            <xs:element name="modul" type="xs:string" maxOccurs="unbounded" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
