@@ -168,26 +168,33 @@ form.addEventListener('submit', async (e) => {
     https://github.com/joamuran/webapp_eljust_eat_pizza/tree/main/Sprint5
     */
     try {
-        // Construimos la estructura POST para enviar a una URL especifica
-        // La url la podemos encontrar en el fichero ../backed/index.js
-        // LInea >> app.post('/enviar-matricula', async (req, res) => { ...
+
+        /*
+        * Construimos la estructura POST para enviar a una URL especifica
+        * La url la podemos encontrar en el fichero ../backed/index.js
+        * LInea >> app.post('/enviar-matricula', async (req, res) => { ...
+        */
+
         const response = await fetch('/enviar-matricula', { //mejor sin el dominio delante
             method: 'POST', // Indicamos el tipo de petición
             headers: { // Indicar propiedades ...
                 'Content-Type': 'application/json' // Especifica que enviem JSON
             },
-            body: JSON.stringify(jsonData) // Tranformamos un json en una string
+            body: JSON.stringify(jsonData) // Tranformamos el jsonData en una string
         });
         
-        // En caso de que response no fuera valida
+        // En caso de que 'response' no fuera valida
         if (!response.ok) {
             throw new Error('Error en la respuesta del servidor');
         }
+        
+        /* >>>> BLOB <<<<
+        * Convertimos la respuesta (response == promise) en un fichero Blob
+        * Blob >> objeto tipo fichero de datos planos inmutables
+        * https://developer.mozilla.org/es/docs/Web/API/Blob
+        */
 
-        // Convertimos la respuesta (response == promise) en un fichero Blob
-        // Blob >> objeto tipo fichero de datos planos inmutables
-        // https://developer.mozilla.org/es/docs/Web/API/Blob
-        const blob = await response.blob();
+        const blob = await response.blob(); // Guardamos la respuesta
 
         // Creamos un objeto URL temporal con el blob para acceder a ella
         const url = URL.createObjectURL(blob);

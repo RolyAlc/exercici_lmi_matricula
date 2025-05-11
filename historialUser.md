@@ -36,3 +36,109 @@ PROBAR EN ENTORNO LINUX
 
 SE HA RELIZADO LA PRUEBA EN ENTORNO LINUX CON LOS NUEVOS CAMBIOS (COMMITs)
 PRUEBAS 1 >> OK
+
+---
+## comandos
+
+- xml
+- xsd
+- dtd
+- xslt
+- xslt-fo
+
+---
+
+## comandos
+
+- `xml`
+  - Lenguaje de marcado que define datos de forma estructurada.
+  - Utilizado para almacenar e intercambiar información.
+
+- `xs:schema`
+  - Define la estructura (reglas) de un documento XML.
+  - Es el elemento raíz de un archivo `.xsd`.
+  - Especifica qué elementos y atributos son válidos y cómo deben aparecer.
+
+  - `xs:element`
+    - Define un **elemento XML**.
+    - Puede ser simple (texto plano) o complejo (con subelementos y atributos).
+    - Atributos comunes:
+      - `name`: nombre del elemento.
+      - `type`: tipo de dato (`xs:string`, `xs:int`, etc.).
+      - Puede contener directamente un `xs:complexType`.
+
+    - `xs:complexType`
+      - Define un elemento que **contiene otros elementos o atributos**.
+      - Se usa para construir estructuras jerárquicas.
+
+      - `xs:sequence`
+        - Indica que los elementos hijos deben aparecer **en orden**.
+        - Contiene una lista de `xs:element` hijos.
+        - Permite repetir o hacer opcionales elementos con atributos como:
+          - `minOccurs` (mínimo número de veces)
+          - `maxOccurs` (máximo número de veces)
+
+---
+
+### ✅ **Opción A: Instalar Node.js 18 (LTS) desde NodeSource**
+
+1. **Eliminar versiones anteriores** (si las hay):
+
+   ```bash
+   sudo apt remove -y nodejs libnode-dev
+   sudo apt autoremove -y
+   ```
+
+2. **Agregar el repositorio de Node.js 18:**
+
+   ```bash
+   curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+   ```
+
+3. **Instalar Node.js:**
+
+   ```bash
+   sudo apt install -y nodejs
+   ```
+
+4. **Verificar versiones:**
+
+   ```bash
+   node -v
+   npm -v
+   ```
+
+---
+
+### ✅ **Opción B: Usar `nvm` (recomendado para desarrolladores)**
+
+Esto te permite instalar y cambiar entre múltiples versiones fácilmente.
+
+1. **Instalar `nvm`:**
+
+   ```bash
+   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+   source ~/.bashrc  # o ~/.zshrc si usas Zsh
+   ```
+
+2. **Instalar Node.js 18 (o la última):**
+
+   ```bash
+   nvm install 18
+   nvm use 18
+   ```
+
+3. **Hacer que se use siempre esa versión:**
+
+   ```bash
+   nvm alias default 18
+   ```
+
+4. **Verificar:**
+
+   ```bash
+   node -v
+   npm -v
+   ```
+
+---
